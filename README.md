@@ -1,5 +1,7 @@
 # MarsRover
 
+### The Challenge
+
 Write a program which takes in commands and moves one or more robots around.
 
 The world should be modeled as a grid with size m x n. Your program should read the input, update the robots, and print out the final states of the robots.
@@ -36,6 +38,14 @@ The output would be:
 ```
 (2, 3, W)
 (1, 0, S) LOST
+```
+
+### The solution
+
+Call the function like so:
+
+```elixir
+MarsRover.rove({2, 3, "N"}, {4, 8}, "FLLFR")
 ```
 
 ### Tests
