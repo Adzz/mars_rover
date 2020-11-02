@@ -8,7 +8,7 @@ defmodule MarsRover do
   the position of the rover. That way we don't need the concept of a board at all except to set the
   boundaries for the X and Y position.
   """
-  def rove({x, y}, starting_position, movements) do
+  def rove(starting_position, {x, y}, movements) do
     parse_movements(movements)
     |> Enum.reduce_while(starting_position, fn movement, rover_position ->
       new_position = {new_x, new_y, _} = update_position(rover_position, movement)
@@ -23,9 +23,9 @@ defmodule MarsRover do
   end
 
   defp out_of_bounds?({new_x, new_y}, {x, y}) do
-    max_x = x + 1
+    max_x = x - 1
     min_x = 0
-    max_y = y + 1
+    max_y = y - 1
     min_y = 0
 
     new_x > max_x or new_x < min_x or new_y > max_y or new_y < min_y
